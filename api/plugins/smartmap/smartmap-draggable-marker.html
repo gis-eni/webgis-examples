@@ -51,13 +51,13 @@
         }
 
         if(!draggableMarker) {
-            draggableMarker = webgis.createMarker({
+            draggableMarker = map.addMarker({
                 lat: lat,
                 lng: lng,
                 icon: 'blue',
                 draggable: true
             });
-            draggableMarker.addTo(map.frameworkElement);
+
             draggableMarker.on('dragend', function(e) {
                 var pos = draggableMarker.getLatLng();
                 commitPosition(pos.lng, pos.lat);
@@ -95,10 +95,10 @@
 
                 map.setScale(2000000, [15.2, 47.3]);
 
-                map.frameworkElement.on('click',function(e) {
-                    if(e.latlng) {
-                        console.log('map-click', e.latlng);
-                        setDraggableMarkerPos(e.latlng.lng, e.latlng.lat);
+                map.events.on('click',function(channel, sender, e) {
+                    if(e.lng && e.lat) {
+                        console.log('map-click', e);
+                        setDraggableMarkerPos(e.lng, e.lat);
                     }
                 });
             }
