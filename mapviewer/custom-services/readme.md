@@ -18,7 +18,7 @@ Karte eingefügt. Dazu konnen spezielle *WebGIS-Events* verwendet werden, zb ``b
 Hier wird eine neue Section eingefügt in der die die Keys ``add-css`` bzw. ``add-js`` für alle Karten oder 
 für eine spezielle Karte angeführt werden.
 
-```
+```Xml
 <section name="map:_all">  <!-- map:_all .. in alle Karte laden. map:Basis und Kataster ... in ein eine spezielle Karte, Groß/Kleischreibung beachten -->
     <add key="add-css" value="css files mit Beistrich getrennt" />   <!-- optional -->
     <add key="add-js" value="Javascript Files mit Beistrich getrennt" />
@@ -29,7 +29,7 @@ für eine spezielle Karte angeführt werden.
 
 Der Aufbau er Javascript Datei, die für das aufbauen der Services zuständig ist, kann in etwa wie folgt aufgebaut werden:
 
-```
+```Javascript
 (function() {
     let _myBasemapService;
 

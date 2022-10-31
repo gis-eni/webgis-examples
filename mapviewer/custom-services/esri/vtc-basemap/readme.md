@@ -6,7 +6,7 @@ um auf ESRI Dienste zugreifen zu können.
 In der Datei ``my-vector-tiles.js`` (die ebenfalls über die ``portal.config`` in die Karte eingebunden wird)
 wird der Dienst erzeugt und in die Karte eingefügt:
 
-```
+```Javascript
 (function() {
     let _customService;
 
