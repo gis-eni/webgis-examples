@@ -8,14 +8,22 @@
             frameworkElement: L.maplibreGL({style: 'http://localhost:8080/styles/osm-bright/style.json'}),
             isBasemap: true,
             fallback: 'vtc_fallback_osm_bright@custom',
-            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/osm-bright/default/1x/16/22834/35141.png'
+            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/osm-bright/default/1x/16/22834/35141.png',
+            onAdd: function(map, frameworkElement) {
+                console.log('custom - onAdd -update servicie');
+                frameworkElement._update();
+            }
         });
 
         map.addCustomService({
             name: 'VTC Dark Matter',
             frameworkElement: L.maplibreGL({style: 'http://localhost:8080/styles/dark-matter/style.json'}),
             isBasemap: true,
-            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/dark-matter/default/1x/16/22834/35141.png'
+            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/dark-matter/default/1x/16/22834/35141.png',
+            onAdd: function(map, frameworkElement) {
+                console.log('custom - onAdd -update servicie');
+                frameworkElement._update();
+            }
         });
 
         map.addCustomService({
@@ -23,7 +31,11 @@
             frameworkElement: L.maplibreGL({style: 'http://localhost:8080/styles/klokantech-basic/style.json'}),
             isBasemap: true,
             fallback: 'geoland_bm@default',
-            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/klokantech-basic/default/1x/16/22834/35141.png'
+            previewImageUrl: 'http://my-vector-tile-server/services/wmts/1.0.0/klokantech-basic/default/1x/16/22834/35141.png',
+            onAdd: function(map, frameworkElement) {
+                console.log('custom - onAdd -update servicie');
+                frameworkElement._update();
+            }
         });
     });
 
