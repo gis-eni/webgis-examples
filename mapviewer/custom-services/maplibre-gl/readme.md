@@ -43,20 +43,20 @@ wird der Dienst erzeugt und in die Karte eingefügt:
 }());
 ```
 
-Hier werden drei Basemap-Dienste eingebunden (vor allen anderen Kartendiensten).
+Hier werden drei Basemap-Dienste eingebunden (vor allen anderen Kartendiensten => ``before-map-add-services``).
 Ist die Karte im Viewer fertig aufgebaut (``viewer-map-created``), wir der erste Dienst sichtbar geschalten.
 
 Der ``map.addCustomService`` Funktion werden folgende Werte übergeben:
 
 * ``mame``: Der Name des Dienstes (scheint in der Basemap-Kachel auf)
 
-* ``frameworkElement``: hier wird das eigentlich ``Leaflet-Layer`` Objekt erzeugt und übergeben
+* ``frameworkElement``: hier wird das eigentliche ``Leaflet-Layer`` Objekt erzeugt und übergeben
 
 * ``isBasemap`` (optional): Beim Layer (Dienst) handelt es sich um eine Basemap
 
-* ``fallback`` (optional): Prozesse die im WebGIS serverseitig laufen (zB Drucken), sehen benutzerdefinierten Dienste nicht. Diese existieren nur am Client. Ein Vector Tile Cache kann somit nicht gedruckt werden. Für diese Fall kann hier ein beliebiger Dienst aus einem CMS als *Fallback* verwendet werden. Dieser wird dann beispielsweise anstelle des VTC gedruckt. Dieser *Fallback-Dienst* muss sich zwingend in der aktuellen Karte befinden.
+* ``fallback`` (optional): Prozesse die im WebGIS serverseitig laufen (zB Drucken), sehen benutzerdefinierten Dienste nicht. Diese existieren nur am Client. Ein Vector Tile Cache kann somit nicht gedruckt werden. Für diesen Fall kann hier ein beliebiger Dienst aus einem WebGIS CMS als *Fallback* verwendet werden. Dieser wird dann beispielsweise anstelle des VTC gedruckt. Dieser *Fallback-Dienst* muss sich zwingend in der aktuellen Karte befinden.
 
-* ``previewImageUrl`` (optional): Hier kann die Url zu einem Bild angegeben werden, der in der Viewer-Oberfläche als Basemap-Kachel dargestellt wird.
+* ``previewImageUrl`` (optional): Hier kann die Url zu einem Bild angegeben werden, das in der Viewer-Oberfläche als Basemap-Kachel dargestellt wird.
 
 * ``onAdd`` (optional): Hier kann eine Funktion angegeben werden, die aufgerufen wird, wenn der Basemap Dienst sichtbar geschalten wird. Bei den *Maplibre-Leaflet* Layer tritt das Problem auf, dass ein Dienst bei mehrmaligen
-umschalten auf der letzten Position angezeigt wird. Dies konnte um Zeitpunkt des Testens mit der Funktion ``_update()`` gelöst werdern.
+umschalten wieder auf der letzten Position angezeigt wird. Dies konnte um Zeitpunkt des Testens mit der Funktion ``frameworkElement._update()`` gelöst werden.

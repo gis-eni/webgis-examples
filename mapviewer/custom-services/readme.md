@@ -3,23 +3,23 @@
 Bei benutzerdefinierten Diensten handelt es sich um (Leaflet) Plugins, die es ermöglichen, Karteninhalte
 im Viewer einzubinden, die nicht im Lieferumfang von WebGIS enthalten sind.
 
-**Achtung:** Es kann nicht garantiert werden, dass jedes Plugin fehlerfei mit WebGIS funktioniert.
-Es gibt daher für diese Art von benutzerdefinierte Dienste **keinen Support**!
+**Achtung:** Es kann nicht garantiert werden, dass jedes Plugin fehlerfrei mit WebGIS funktioniert.
+Es gibt daher für diese Art von benutzerdefinierten Dienste **keinen Support**!
 
-Um benuterdefinierte Dienste einzubinden sind in der Regel zwei Dinge notwendig:
+Um benutzerdefinierte Dienste einzubinden, sind in der Regel zwei Dinge notwendig:
 
-* In portal.config wird eingetragen, welche zusätzlichen Javascript und CSS Dateien in eine Karte eingebunden werden
+* In der ``portal.config`` wird eingetragen, welche zusätzlichen Javascript und CSS Dateien in eine Karte eingebunden werden
 
 * In einer dieser Javascript Dateien (optional auch in der custom.js) werden dann die Plugins erstellt und in die
-Karte eingefügt. Dazu konnen spezielle *WebGIS-Events* verwendet werden, zb ``before-map-add-services``, ``after-map-add-services``, ``viewer-map-created``
+Karte eingefügt. Dazu können spezielle *WebGIS-Events* verwendet werden, zB ``before-map-add-services``, ``after-map-add-services`` oder ``viewer-map-created``
 
 ## portal.config
 
-Hier wird eine neue Section eingefügt in der die die Keys ``add-css`` bzw. ``add-js`` für alle Karten oder 
+Hier wird eine neue Section eingefügt, in der die Keys ``add-css`` bzw. ``add-js`` für alle Karten oder 
 für eine spezielle Karte angeführt werden.
 
 ```Xml
-<section name="map:_all">  <!-- map:_all .. in alle Karte laden. map:Basis und Kataster ... in ein eine spezielle Karte, Groß/Kleischreibung beachten -->
+<section name="map:_all">  <!-- map:_all .. in alle Karte laden. map:Basis und Kataster ... in ein eine spezielle Karte, Groß/Kleinschreibung beachten -->
     <add key="add-css" value="css files mit Beistrich getrennt" />   <!-- optional -->
     <add key="add-js" value="Javascript Files mit Beistrich getrennt" />
 </section> 
@@ -27,7 +27,7 @@ für eine spezielle Karte angeführt werden.
 
 ## Javascript
 
-Der Aufbau er Javascript Datei, die für das aufbauen der Services zuständig ist, kann in etwa wie folgt aufgebaut werden:
+Der Aufbau er Javascript Datei, die für das aufbauen der Services zuständig ist, kann in etwa wie folgt aussehen:
 
 ```Javascript
 (function() {
@@ -50,5 +50,5 @@ Der Aufbau er Javascript Datei, die für das aufbauen der Services zuständig is
 }());
 ```
 
-In den hier angeführten Unterordneren finden sich Beispiele für ``portal.config`` und 
+In den hier angeführten Unterordnern finden sich Beispiele für ``portal.config`` und 
 Javascript zum einfügen von benutzerdefinierten Dienste. 
