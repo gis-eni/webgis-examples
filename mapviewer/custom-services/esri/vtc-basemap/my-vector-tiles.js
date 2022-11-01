@@ -9,8 +9,6 @@
             }),
             isBasemap: true
         }); 
-
-        map.setBasemap(customService.id);
     });
 
     webgis.events.on('viewer-map-created', function(channel, sender, map) {
